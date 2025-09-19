@@ -61,6 +61,26 @@ h6 {
 }
 
 /* css reset ends here */
+@font-face {
+  font-family: "Montserrat";
+  src:
+    url("./font/montserrat-medium-webfont.woff2") format("woff2"),
+    url("./font/montserrat-medium-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat-Thin";
+  src:
+    url("./font/montserrat-light-webfont.woff2") format("woff2"),
+    url("./font/montserrat-light-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Monserrat-Bold";
+  src:
+    url("./font/montserrat-bold-webfont.woff2") format("woff2"),
+    url("./font/montserrat-bold-webfont.woff") format("woff");
+}
 
 :root {
   --padding-normal: 1rem;
@@ -74,7 +94,13 @@ h6 {
   --blue: #1992d4;
   --grey: #e2e8f0;
 
-  --small-font: 0.5rem;
+  --normal-font: "Montserrat";
+  --small-font: "Montserrat-Thin";
+  --large-font: "Monserrat-Bold";
+  --small-font-size: 0.5rem;
+  --smaller-font-size: 0.75rem;
+  --normal-font-size: 1rem;
+  --larger-font-size: 1.25rem;
 }
 
 body {
@@ -82,6 +108,7 @@ body {
   display: grid;
   grid-template-columns: minmax(min-content, max-content) minmax(min-content, 3.8fr);
   grid-template-rows: min-content minmax(max-content, 6fr);
+  font-family: var(--normal-font);
 }
 
 .sidebar {
@@ -89,6 +116,7 @@ body {
   padding: var(--padding-normal);
   background-color: var(--blue);
   color: #fff;
+  font-family: var(--large-font);
 }
 
 .navigation {
@@ -113,6 +141,7 @@ li {
   gap: var(--gap-small);
   align-items: center;
   justify-content: start;
+  font-size: var(--smaller-font-size);
 }
 
 .logo-text {
@@ -120,6 +149,7 @@ li {
 }
 
 .page-header {
+  font-family: "Monserrat-Bold";
   padding: var(--padding-normal);
 }
 
@@ -146,6 +176,7 @@ search input {
   background-color: var(--grey);
   border: 0;
   border-radius: var(--button-radius);
+  padding-left: var(--padding-small);
 }
 
 .user-buttons {
@@ -166,6 +197,10 @@ search input {
   grid-row: span 2;
 }
 
+.page-header .about-user .initial-text {
+  font-size: var(--small-font-size);
+}
+
 .post-buttons {
   display: grid;
   grid-template-columns: repeat(3, var(--post-buttons-width));
@@ -179,11 +214,13 @@ search input {
   color: #fff;
   border: 0;
   border-radius: var(--button-radius);
-  padding: var(--padding-small);
+  min-width: min-content;
+  padding: var(--padding-small) var(--padding-normal);
+  font-size: var(--smaller-font-size);
 }
 
 main {
-  font-size: var(--small-font);
+  font-size: var(--small-font-size);
   background-color: var(--grey);
   display: grid;
   grid-template-columns: minmax(min-content, 4fr) minmax(min-content, 1fr);
@@ -219,6 +256,13 @@ main {
   justify-content: end;
 }
 
+.projects h2,
+.projects h3 {
+  font-family: "Monserrat-Bold";
+  font-size: var(--smaller-font-size);
+}
+
+
 .announcement-container {
   background-color: #fff;
   display: grid;
@@ -230,11 +274,17 @@ main {
   padding: var(--padding-small);
 }
 
+.announcements h2,
+.announcements h3 {
+  font-family: "Monserrat-Bold";
+}
+
 .trending-container {
   background-color: #fff;
   display: grid;
   padding: var(--padding-normal);
   border-radius: var(--card-radius);
+  gap: var(--gap-small);
 }
 
 .trending-card {
@@ -245,4 +295,16 @@ main {
 
 .trending-card .icon-img {
   grid-row: span 2;
+}
+
+.trending h2,
+.trending h3 {
+  font-family: "Monserrat-Bold";
+}
+
+
+.announcement,
+.trending .about-user {
+  font-family: "Montserrat-Thin";
+  font-size: var(--small-font-size);
 }
