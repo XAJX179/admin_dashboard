@@ -69,15 +69,19 @@ h6 {
   --gap-small: 1rem;
   --logo-text-font-size: 1.1rem;
   --post-buttons-width: 20%;
+  --button-radius: 20px;
+  --card-radius: 10px;
   --blue: #1992d4;
   --grey: #e2e8f0;
+
+  --small-font: 0.5rem;
 }
 
 body {
-  height: 100svh;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 3.8fr;
-  grid-template-rows: max-content minmax(max-content, 6fr);
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, 3.8fr);
+  grid-template-rows: min-content minmax(max-content, 6fr);
 }
 
 .sidebar {
@@ -141,7 +145,7 @@ search {
 search input {
   background-color: var(--grey);
   border: 0;
-  border-radius: 15px;
+  border-radius: var(--button-radius);
 }
 
 .user-buttons {
@@ -152,7 +156,7 @@ search input {
   gap: var(--gap-small);
 }
 
-.about-user {
+.page-header .about-user {
   display: grid;
   grid-template-columns: max-content minmax(max-content, 4fr);
   column-gap: var(--gap-small);
@@ -174,10 +178,71 @@ search input {
   background-color: var(--blue);
   color: #fff;
   border: 0;
-  border-radius: 15px;
+  border-radius: var(--button-radius);
   padding: var(--padding-small);
 }
 
 main {
+  font-size: var(--small-font);
   background-color: var(--grey);
+  display: grid;
+  grid-template-columns: minmax(min-content, 4fr) minmax(min-content, 1fr);
+  padding: var(--padding-normal);
+  gap: var(--gap-small);
+}
+
+.projects {
+  grid-row: span 2;
+}
+
+.project-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40ch, 1fr));
+  justify-content: center;
+  gap: var(--gap-small);
+}
+
+.project-card {
+  min-width: 40ch;
+  background-color: #fff;
+  border-radius: var(--card-radius);
+  padding: var(--padding-normal) var(--padding-small);
+  border-left: 1ch solid #efb42a;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+}
+
+.project-card nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: var(--gap-small);
+  justify-content: end;
+}
+
+.announcement-container {
+  background-color: #fff;
+  display: grid;
+  padding: var(--padding-normal);
+  border-radius: var(--card-radius);
+}
+
+.announcement-card {
+  padding: var(--padding-small);
+}
+
+.trending-container {
+  background-color: #fff;
+  display: grid;
+  padding: var(--padding-normal);
+  border-radius: var(--card-radius);
+}
+
+.trending-card {
+  display: grid;
+  grid-template-columns: max-content minmax(max-content, 4fr);
+  column-gap: var(--gap-small);
+}
+
+.trending-card .icon-img {
+  grid-row: span 2;
 }
