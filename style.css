@@ -93,6 +93,9 @@ h6 {
   --card-radius: 10px;
   --blue: #1992d4;
   --grey: #e2e8f0;
+  --logo-size: 2rem;
+  --small-avatar-size: 2rem;
+  --large-avatar-size: 4rem;
 
   --normal-font: "Montserrat";
   --small-font: "Montserrat-Thin";
@@ -198,6 +201,7 @@ search input {
 }
 
 .page-header .about-user .initial-text {
+  align-self: end;
   font-size: var(--small-font-size);
 }
 
@@ -307,4 +311,21 @@ main {
 .trending .about-user {
   font-family: "Montserrat-Thin";
   font-size: var(--small-font-size);
+}
+
+.logo-img>img {
+  min-width: var(--logo-size);
+  max-width: var(--logo-size);
+}
+
+.icon-img>img {
+  min-width: var(--normal-font-size);
+}
+
+.small-avatar {
+  max-width: var(--small-avatar-size);
+}
+
+.large-avatar {
+  max-width: var(--large-avatar-size);
 }
