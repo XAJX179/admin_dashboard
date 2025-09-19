@@ -68,6 +68,9 @@ h6 {
   --gap-normal: 2.5rem;
   --gap-small: 1rem;
   --logo-text-font-size: 1.1rem;
+  --post-buttons-width: 20%;
+  --blue: #1992d4;
+  --grey: #e2e8f0;
 }
 
 body {
@@ -80,6 +83,8 @@ body {
 .sidebar {
   grid-row: span 2;
   padding: var(--padding-normal);
+  background-color: var(--blue);
+  color: #fff;
 }
 
 .navigation {
@@ -108,4 +113,71 @@ li {
 
 .logo-text {
   font-size: var(--logo-text-font-size);
+}
+
+.page-header {
+  padding: var(--padding-normal);
+}
+
+.page-header-first-line {
+  display: grid;
+  grid-template-columns: minmax(max-content, 2fr) minmax(max-content, 1fr);
+  margin-bottom: var(--padding-normal);
+}
+
+.page-header-second-line {
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(max-content, 1fr))
+}
+
+search {
+  gap: var(--gap-small);
+  display: grid;
+  grid-template-columns: max-content 0.8fr;
+  align-items: center;
+}
+
+search input {
+  background-color: var(--grey);
+  border: 0;
+  border-radius: 15px;
+}
+
+.user-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  align-items: center;
+  justify-content: space-evenly;
+  gap: var(--gap-small);
+}
+
+.about-user {
+  display: grid;
+  grid-template-columns: max-content minmax(max-content, 4fr);
+  column-gap: var(--gap-small);
+}
+
+.about-user .icon-img {
+  grid-row: span 2;
+}
+
+.post-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, var(--post-buttons-width));
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-normal);
+}
+
+.post-buttons button {
+  background-color: var(--blue);
+  color: #fff;
+  border: 0;
+  border-radius: 15px;
+  padding: var(--padding-small);
+}
+
+main {
+  background-color: var(--grey);
 }
