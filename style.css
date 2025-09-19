@@ -1,0 +1,111 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* css reset ends here */
+
+:root {
+  --padding-normal: 1rem;
+  --padding-small: 0.5rem;
+  --gap-normal: 2.5rem;
+  --gap-small: 1rem;
+  --logo-text-font-size: 1.1rem;
+}
+
+body {
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 3.8fr;
+  grid-template-rows: max-content minmax(max-content, 6fr);
+}
+
+.sidebar {
+  grid-row: span 2;
+  padding: var(--padding-normal);
+}
+
+.navigation {
+  display: grid;
+  gap: var(--gap-normal);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding-bottom: var(--padding-small);
+}
+
+.logo,
+.pages li,
+.menu li {
+  display: grid;
+  grid-template-columns: min-content max-content;
+  gap: var(--gap-small);
+  align-items: center;
+  justify-content: start;
+}
+
+.logo-text {
+  font-size: var(--logo-text-font-size);
+}
